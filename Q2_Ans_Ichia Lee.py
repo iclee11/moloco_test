@@ -1,5 +1,5 @@
 '''
-Using linear regression to fit the data. The R2 is pretty descent, 0.006!
+Using linear regression to fit the data. 
 
 * Fiting results: 
 fitted formula: y = -19.29-8.07*x1-1.778012*x2
