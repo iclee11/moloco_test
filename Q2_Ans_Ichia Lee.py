@@ -18,12 +18,12 @@ x, y = df.iloc[:,0:2].values, df.iloc[:,-1].values
 x = np.concatenate((np.ones((len(x),1)),x),axis=1)
 
 # Linear Regression using Gradient Descent 
-def LinearRegression(x, y, coeff = np.random.rand(1,3), iters = 2000, lr = 0.02):
+def LinearRegression(x,y,coeff = np.random.rand(1,3), iters = 2000, lr = 0.02):
     for i in range(iters):
         coeff=coeff-(lr/len(x))*np.sum(x*(np.dot(x,coeff.T)-y.reshape((-1,1))), axis=0)
     return coeff.reshape((-1,))
 
-#running the Gradient Descent and cost function
-coeff = LinearRegression(x,y) # fit coefficients
+# fit model
+coeff=LinearRegression(x,y)
 print('fitted formula: y = %+.2f%+.2f*x1%+2f*x2' % tuple(coeff))
 print('R2 score:',r2_score(y, np.dot(x, coeff.T)))
